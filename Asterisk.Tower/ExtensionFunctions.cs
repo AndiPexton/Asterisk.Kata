@@ -1,10 +1,15 @@
 using System.Collections.Generic;
 using System.Linq;
+using Asterisk.Tower.Gateway;
+using Dependency;
 
-namespace Asterisk.Kata.Tests
+namespace Asterisk.Tower
 {
-    public static class AsteriskTowerFunctions
+    public static class ExtensionFunctions
     {
+        private static char Brick => Shelf.RetrieveInstance<IConfig>().Brick;
+        private static char Padding => Shelf.RetrieveInstance<IConfig>().Padding;
+
         public static IEnumerable<string> CreateAsteriskTower(this int rows) =>
             rows == 0
                 ? Enumerable
@@ -29,10 +34,10 @@ namespace Asterisk.Kata.Tests
             $"{elements.spaces}{elements.asterisks}{elements.spaces}";
 
         private static string AsterisksString(this int numberOfAsterisks) =>
-            new string('*', numberOfAsterisks);
+            new string(Brick, numberOfAsterisks);
 
         private static string PaddingSpacesStringFor(this int numberOfAsterisks, int width) =>
-            new string(' ', numberOfAsterisks.PaddingFor(width));
+            new string(Padding, numberOfAsterisks.PaddingFor(width));
 
         private static int PaddingFor(this int numberOfAsterisks, int width) =>
             (width - numberOfAsterisks) / 2;

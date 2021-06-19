@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dependency.Shelf" Version="2.0.0" />
+    <PackageReference Include="Shadow.Quack" Version="2.0.0" />
+    <PackageReference Include="Shadow.Quack.Args" Version="0.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Asterisk.Tower.Gateway\Asterisk.Tower.Gateway.csproj" />
+    <ProjectReference Include="..\Asterisk.Tower\Asterisk.Tower.csproj" />
+  </ItemGroup>
+
+</Project>

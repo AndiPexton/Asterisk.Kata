@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Asterisk.Tower.Cli": {
+      "commandName": "Project",
+      "commandLineArgs": "/Brick:1 /Padding:0 /Rows:6"
+    }
+  }
+}
